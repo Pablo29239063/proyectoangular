@@ -1,0 +1,29 @@
+<app-navbar></app-navbar>
+<div class="contenedor">
+    <h1>
+        Catalogo de Productos
+    </h1>
+    <p>¿Que estas buscando?</p>
+    </div>
+<div class="contenedor1">
+    <input type="text" #search (keyup)="buscarProductos(search.value)" id="buscador" name="filterproductos" matInput
+  placeholder="Buscar" [(ngModel)]='filterproductos'>
+</div>
+<br>
+<div class="row">
+  <div class="col-md-3 col-xs-12 mt-3" *ngFor="let producto of productos">
+      <div class="card">
+          <img src="/assets/fotos proyecto final/imagenesBase/{{producto.nombre}}.jpg" class="card-img-top">
+          <div class="card-body">
+              <h5 class="card-title">{{producto.nombre}}</h5>
+              <h6 class="card-subtitle mt-2"><b>Precio:</b> {{producto.precio}}</h6>
+              <p class="card-text mt-2"><b>Unidades Disponibles:</b>{{producto.stock}}</p>               
+               <div class="d-flex mt-2">
+                 <button type="button" class="btn-card btn btn-primary" (click)="vermas(producto);">Ver Mas</button>
+                  <button type="button" class=" ml-2 btn-card btn btn-warning text-white" id="resta"(click)="onAddCarrito(producto, inputAdd.value)">Añadir </button>
+                  <input #inputAdd type="number" class=" u ml-1 form-control input-value" min="1" value="1" max="100">
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

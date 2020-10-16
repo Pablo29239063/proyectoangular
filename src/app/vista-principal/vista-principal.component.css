@@ -1,0 +1,11 @@
+.contenedor{
+    display: flex;
+    justify-content: space-between;
+    padding-right: 130px;
+}
+.contenedor1 {
+text-align: end;
+}
+.u{
+ width:80px;   
+}
